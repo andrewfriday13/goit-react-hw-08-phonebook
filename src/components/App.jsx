@@ -1,25 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getContacts } from 'redux/operations';
 
 import { ContactForm } from './contact/ContactForm';
 import { ContactList } from './contact-list/ContactList';
 import { Filter } from './filter/Filter';
+import { getIsLoading , getError} from 'redux/selectors';
+
 import css from './app.module.css'
-
-
-import { allContacts, getFilter,getIsLoading , getError} from 'redux/selectors';
-
-import { searchContacts } from 'redux/filterSlice';
-import { addNumber, getContacts, removeNumber } from 'redux/operations';
-import { useEffect } from 'react';
-
-
 
 
 
 export  const App = () => {
 
-  const contactsSecond = useSelector(allContacts)
-  const searchContact = useSelector(getFilter)
   const dispatch = useDispatch()  
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
@@ -30,46 +23,15 @@ export  const App = () => {
 dispatch(getContacts())
   },[dispatch])
 
-  const addContacts = (name, number) => {
-    const checkContact = contactsSecond.map(contact => contact.name).includes(name)
-    if (checkContact) {
-      return alert(`${name} is alredy in contacts.`);
-    }
-    const action = addNumber({name, number})
-    dispatch(action)
-  };
-
-   const filterContacts = event =>{
-    const filter = searchContacts(event.target.value)
-    dispatch(filter)
-  }
-
-   const removeContacts =(contactId)=>{
-const action = removeNumber(contactId)
-    dispatch(action)
-  } 
   return(
 
     <div className={css.phonebook}>
     <h1>Phonebook</h1>
-
-    <ContactForm
-      onSubmit={addContacts}
-     /> 
-
+    <ContactForm/> 
     <h2>Contacts</h2>
-
-    <Filter 
-      onChange={filterContacts } 
-      value={searchContact}
-    />
-      {isLoading && !error && <b>Request in progress...</b>}
-
-   <ContactList
-      onRemove={removeContacts}
-      filter={searchContact}
-      contacts={contactsSecond}
-    />
+    <Filter/>
+    {isLoading && !error && <b>Request in progress...</b>}
+   <ContactList/>
 </div>
   )
 }
