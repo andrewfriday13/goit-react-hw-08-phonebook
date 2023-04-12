@@ -4,12 +4,12 @@ import { Formik, Field, Form } from 'formik';
 import css from './contact.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { allContacts } from 'redux/selectors';
-import { addNumber } from 'redux/operations';
+import { addNumber } from 'redux/operations/operations';
 
    
 
 
-export const ContactForm = ({onSubmit}) => {
+export const ContactForm = () => {
 
   const contactsSecond = useSelector(allContacts)
   const dispatch = useDispatch()

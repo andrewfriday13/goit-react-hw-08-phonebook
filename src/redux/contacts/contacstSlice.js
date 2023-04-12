@@ -1,6 +1,6 @@
 import {  createSlice } from "@reduxjs/toolkit"
 
-import {addNumber, getContacts, removeNumber} from './operations'
+import {addNumber, getContacts, removeNumber} from '../operations/operations'
 
 const handlePenging = state =>{
      state.isLoading = true
