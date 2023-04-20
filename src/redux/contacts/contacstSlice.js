@@ -1,7 +1,7 @@
 import {  createSlice } from "@reduxjs/toolkit"
 
 import {addNumber, getContacts, removeNumber} from './operationsContacts'
-
+import { logOut } from "redux/auth/auth-operations"
 
 const handlePenging = state =>{
      state.isLoading = true
@@ -44,6 +44,10 @@ const contactsSlice = createSlice({
         );
         state.contacts.splice(index, 1);
     })
+    .addCase(logOut.fulfilled, state => {
+        state.contacts = []
+    })
+    .addCase(logOut.rejected, handleRejected )
     .addCase(removeNumber.rejected, handleRejected )
     .addCase(addNumber.rejected, handleRejected)
     .addCase(getContacts.rejected,handleRejected )
