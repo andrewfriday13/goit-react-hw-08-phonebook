@@ -3,7 +3,8 @@ import React from 'react';
 import css from '../contact/contact.module.css'
 import { searchContacts } from "redux/filter/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilter } from "redux/selectors";
+import { getFilter } from 'redux/filter/selectors-filter';
+
 
 
 export const Filter = ()=>{
@@ -12,6 +13,7 @@ export const Filter = ()=>{
 
 
   const filterContacts = event =>{
+    console.log(event.target.value)
     const filter = searchContacts(event.target.value)
     dispatch(filter)
   }

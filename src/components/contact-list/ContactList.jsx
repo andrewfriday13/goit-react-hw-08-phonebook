@@ -2,9 +2,10 @@
 
 import css from './ContactListStyle.module.css'
 
-import { allContacts, getFilter } from "redux/selectors";
+import { allContacts } from "redux/contacts/selectors-contacts";
 import { useDispatch, useSelector } from "react-redux";
-import { removeNumber } from "redux/operations/operations";
+import { removeNumber } from "redux/contacts/operationsContacts";
+import { getFilter } from 'redux/filter/selectors-filter';
 
 
 export const ContactList = ()=>{

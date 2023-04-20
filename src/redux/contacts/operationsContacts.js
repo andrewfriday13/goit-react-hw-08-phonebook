@@ -1,16 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import axios from 'axios';
+import { useSelector } from "react-redux";
+import { isLogin } from "redux/auth/auth-selectors";
 
-axios.defaults.baseURL = 'https://6432b13c3e05ff8b372b959c.mockapi.io'
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com'
 
  export const getContacts = createAsyncThunk('contacts/all',
     async ( thunkAPI)=>{
-    try{
-        const response = await axios.get("/contacts")
-        return response.data
-    }catch(e){
-       return thunkAPI.rejectWithValue(e.message)
+        const inSystem =useSelector(isLogin)
+    if(inSystem){
+        try{
+            const response = await axios.get("/contacts")
+            return response.data
+        }catch({message}){
+           return thunkAPI.rejectWithValue(message)
+        }
     }
 })
 
@@ -19,8 +24,8 @@ export const addNumber = createAsyncThunk('contacts/add',
     try{
         const response = await axios.post('/contacts', {...data})
         return response.data
-    }catch(e){
-        return thunkAPI.rejectWithValue(e.message)
+    }catch({message}){
+        return thunkAPI.rejectWithValue(message)
     }
     }
 )
@@ -30,7 +35,7 @@ async (dataId, thunkAPI)=>{
     try{
         const response = await axios.delete(`/contacts/${dataId}`)
         return  response.data
-    }catch(e){
-        return thunkAPI.rejectWithValue(e.message)
+    }catch({message}){
+        return thunkAPI.rejectWithValue(message)
     }
 })

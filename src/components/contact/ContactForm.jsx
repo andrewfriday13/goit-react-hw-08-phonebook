@@ -3,8 +3,8 @@ import { Formik, Field, Form } from 'formik';
 
 import css from './contact.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { allContacts } from 'redux/selectors';
-import { addNumber } from 'redux/operations/operations';
+import { allContacts } from 'redux/contacts/selectors-contacts';
+import { addNumber } from 'redux/contacts/operationsContacts';
 
    
 

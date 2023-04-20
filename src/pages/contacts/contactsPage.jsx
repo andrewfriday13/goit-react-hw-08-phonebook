@@ -3,11 +3,11 @@ import { ContactForm } from "components/contact/ContactForm"
 import { Filter } from "components/filter/Filter"
 import css from './contacts.module.css'
 import { useSelector } from "react-redux"
-import { getError, getIsLoading } from "redux/selectors"
+import { getError, getIsLoading } from "redux/contacts/selectors-contacts"
 
 
 
-export const Contact = () => {
+ const Contact = () => {
 
     const isLoading = useSelector(getIsLoading);
     const error = useSelector(getError);
@@ -22,3 +22,4 @@ export const Contact = () => {
     <ContactList/>
     </div>
 }
+export default Contact
