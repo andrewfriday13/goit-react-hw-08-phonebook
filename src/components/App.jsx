@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 
 
 import { isLogin } from 'redux/auth/auth-selectors';
+import { refreshUser } from 'redux/auth/auth-operations';
 
 
 const Layout = lazy(() => import('./Layout'));
@@ -20,7 +21,7 @@ export const App = () => {
    const inSystem = useSelector(isLogin)
 
   useEffect(()=>{
-    dispatch(getContacts())
+    dispatch(refreshUser())
   },[dispatch])
 
   

@@ -11,7 +11,7 @@ export const UserMenu =()=>{
     const out = () => {
         dispatch(logOut())
     }
-
+    console.log(name)
     return(
         <div>
             <p>{name}</p>
