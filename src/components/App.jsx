@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 
 import { isLogin } from 'redux/auth/auth-selectors';
 import { refreshUser } from 'redux/auth/auth-operations';
+import PrivateRoute from './PrivateRoute';
+
 
 
 const Layout = lazy(() => import('./Layout'));
@@ -33,7 +35,13 @@ export const App = () => {
     <Route index element={<Home/>}/>
     <Route path='/register' element={!inSystem && <RegisterForm/>}/>
     <Route path='/login' element={!inSystem&&<LoginForm/>}/>
-    <Route path='/contacts' element={ inSystem &&<Contact/>}/>
+
+    <Route path='/contacts' element={
+      <PrivateRoute redirectTo='/contacts' component={<Contact/>}/>
+    }/>
+    {/* <PrivateRoute  path='/contacts' >
+      <Contact/>
+    </PrivateRoute> */}
   </Route>
 </Routes>
 </Suspense>
