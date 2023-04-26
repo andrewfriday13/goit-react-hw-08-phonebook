@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
   contacts: contactsReducer,
   filter: filterReducer,
   auth: persistReducer(persistConfig, authReducer)
-  ,
+  
 })
 // const persistedReducer = persistReducer(persistConfig, rootReducer)
 
