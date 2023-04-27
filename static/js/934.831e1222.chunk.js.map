@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/934.831e1222.chunk.js","mappings":"iKAUA,UARc,WACd,OAAO,0BACP,uCAIC,C","sources":["pages/home/home.jsx"],"sourcesContent":["\n\n const Home = () => {\nreturn <div>\n<h1>Main page</h1>\n\n</div>\n\n}\n\nexport default Home"],"names":[],"sourceRoot":""}
