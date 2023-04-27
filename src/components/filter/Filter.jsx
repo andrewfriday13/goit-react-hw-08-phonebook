@@ -1,6 +1,6 @@
 
 import React from 'react';
-import css from '../contact/contact.module.css'
+import css from '../../style/Form-style.module.css'
 import { searchContacts } from "redux/filter/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilter } from 'redux/filter/selectors-filter';

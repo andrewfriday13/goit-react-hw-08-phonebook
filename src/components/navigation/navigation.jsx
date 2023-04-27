@@ -1,15 +1,23 @@
-import { useSelector } from "react-redux"
+
 import { NavLink } from "react-router-dom"
-import { isLogin } from "redux/auth/auth-selectors"
+
+import css from './navigation.module.css'
 
 
 
 export const Navigations =()=>{
-    const inSystem = useSelector(isLogin)
+
     return(
-        <nav>
-            <NavLink to='/'>Home</NavLink>
-            {inSystem && (<NavLink to='/contacts'>Contacts</NavLink>)}
+        <nav className={css.navigations__component}>
+            <NavLink 
+                className={css.navigations} 
+                to='/'
+                >Home</NavLink>
+
+            <NavLink 
+                className={css.navigations} 
+                to='/contacts'
+            >Contacts</NavLink>
         </nav>
     )
 }

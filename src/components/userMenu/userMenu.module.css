@@ -1,0 +1,25 @@
+
+.userInfo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logOut{
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+    border: none;
+    background-color: rgba(43, 67, 226, 0.599);
+    color: white;
+    font-size: 15px;
+    border-radius: 5PX;
+    transition: all 250ms;
+}
+
+
+.logOut:hover{
+    color: rgba(213, 235, 68, 0.946);
+    background-color: rgba(43, 67, 226, 0.657);
+    
+}

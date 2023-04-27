@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 
-import css from './contact.module.css'
+import css from '../../style/Form-style.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { allContacts } from 'redux/contacts/selectors-contacts';
 import { addNumber } from 'redux/contacts/operationsContacts';
@@ -41,7 +41,7 @@ export const ContactForm = () => {
     initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form className={css.form_contact}>
+      <Form className={css.form}>
         <label>
           
         <Field  className={css.input__form} id="firstName"  type="text"

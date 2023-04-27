@@ -1,10 +1,10 @@
 
 
  const Home = () => {
-return <div>
+return <>
 <h1>Main page</h1>
+</>
 
-</div>
 
 }
 

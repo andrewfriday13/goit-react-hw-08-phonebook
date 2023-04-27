@@ -2,8 +2,7 @@ import { Field, Form, Formik } from "formik"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { logIn } from "redux/auth/auth-operations"
-
-
+import css from '../../style/Form-style.module.css'
 
  const LoginForm = () => {
     const dispatch = useDispatch()
@@ -34,13 +33,16 @@ const formSubmit = (e) => {
 
     return(
   
-        <Formik  
+   <div className={css.all_form}>
+    <h1>Login From</h1>
+     <Formik  
     initialValues={initialValues}
     onSubmit={formSubmit}
     >
-      <Form >
+      <Form className={css.form}>
         <label>
         <Field  
+        className={css.input__form}
           onChange={formChange}
           value={email}
             id="lastName" 
@@ -52,16 +54,24 @@ const formSubmit = (e) => {
         </label>
         
         <label>
-          <Field   id="firstName"  type="password"
+          <Field 
+          className={css.input__form}
+          id="firstName" 
+           type="password"
             name="password"
             value={password}
           onChange={formChange}
             required 
             placeholder='Password'/>
           </label>
-        <button  type="submit">S U B M I T</button>
+        <button  
+         className={css.submit__btn}
+        type="submit">S U B M I T</button>
       </Form>
     </Formik>
+
+   </div>
+   
     )
 }
 

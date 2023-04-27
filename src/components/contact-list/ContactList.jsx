@@ -41,15 +41,3 @@ export const ContactList = ()=>{
   )
 }
 
-// ContactList.propTypes ={
-//   contactSecond: PropTypes.arrayOf(PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     id: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//   })),
-//   filter: PropTypes.string,
-//   onRemove: PropTypes.func,
-
-
-// }
-

@@ -5,13 +5,13 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 
 import { refreshUser } from 'redux/auth/auth-operations';
-import { PublicRoute } from './PublicRoute.js';
-import { PrivateRoute } from './PrivateRoute.jsx';
+import { PublicRoute } from './components/PublicRoute.js';
+import { PrivateRoute } from './components/PrivateRoute.jsx';
 
 
 
 
-const Layout = lazy(() => import('./Layout'));
+const Layout = lazy(() => import('./components/Layout.jsx'));
 const Home = lazy(() => import('pages/home/home'));
 const Contact = lazy(() => import('pages/contacts/contactsPage'));
 const LoginForm = lazy(() => import('pages/login/loginForm'));
