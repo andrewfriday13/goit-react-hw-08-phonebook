@@ -13,7 +13,6 @@ export const Filter = ()=>{
 
 
   const filterContacts = event =>{
-    console.log(event.target.value)
     const filter = searchContacts(event.target.value)
     dispatch(filter)
   }
